@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Optimizer pipeline: local config is backed up, a preset is reviewed, settings are applied, and the frametime log is compared">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#090912"/>
+      <stop offset="1" stop-color="#0f0f1d"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff3d6e"/>
+      <stop offset="1" stop-color="#35e0ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- connector line -->
+  <path d="M210 338 H990" fill="none" stroke="url(#acc)" stroke-width="3" stroke-dasharray="10 10" opacity=".55"/>
+  <path d="M980 330 L1000 338 L980 346 Z" fill="#35e0ff"/>
+
+  <!-- stage 1: read & backup -->
+  <g transform="translate(70,210)">
+    <rect width="200" height="250" rx="16" fill="#10101d" stroke="rgba(255,255,255,.09)"/>
+    <rect x="16" y="16" width="40" height="40" rx="10" fill="rgba(255,61,110,.14)" stroke="rgba(255,61,110,.24)"/>
+    <path d="M26 46V30m6 16V24m6 22V36m6 12V18" fill="none" stroke="#ff3d6e" stroke-width="2" stroke-linecap="round"/>
+    <text x="66" y="34" font-family="Rajdhani,Inter,sans-serif" font-weight="700" font-size="18" fill="#f3f4ff">01 · READ</text>
+    <text x="66" y="52" font-family="Inter,sans-serif" font-size="13" fill="#9093ad">local config</text>
+
+    <text x="16" y="96" font-family="Inter,sans-serif" font-size="14" fill="#c9cbdd">Snapshot the settings file with a timestamp and the game build it came from.</text>
+
+    <g transform="translate(16,168)">
+      <rect width="168" height="26" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)"/>
+      <text x="10" y="17" font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#9093ad">backup_2026-11-24.json</text>
+    </g>
+    <g transform="translate(16,200)">
+      <rect width="168" height="26" rx="6" fill="rgba(93,242,160,.1)" stroke="rgba(93,242,160,.25)"/>
+      <text x="10" y="17" font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#5df2a0">original · saved ✓</text>
+    </g>
+  </g>
+
+  <!-- stage 2: diff -->
+  <g transform="translate(330,210)">
+    <rect width="200" height="250" rx="16" fill="#10101d" stroke="rgba(255,255,255,.09)"/>
+    <rect x="16" y="16" width="40" height="40" rx="10" fill="rgba(53,224,255,.12)" stroke="rgba(53,224,255,.24)"/>
+    <path d="M24 26h16m-16 8h16m-16 8h10" fill="none" stroke="#35e0ff" stroke-width="2" stroke-linecap="round"/>
+    <text x="66" y="34" font-family="Rajdhani,Inter,sans-serif" font-weight="700" font-size="18" fill="#f3f4ff">02 · DIFF</text>
+    <text x="66" y="52" font-family="Inter,sans-serif" font-size="13" fill="#9093ad">review preset</text>
+
+    <text x="16" y="96" font-family="Inter,sans-serif" font-size="14" fill="#c9cbdd">Every changed value is listed before anything is written.</text>
+
+    <g font-family="ui-monospace,Consolas,monospace" font-size="12">
+      <text x="16" y="132" fill="#9093ad">shadows</text>
+      <text x="186" y="132" text-anchor="end" fill="#ff3d6e">high → low</text>
+      <text x="16" y="156" fill="#9093ad">effects</text>
+      <text x="186" y="156" text-anchor="end" fill="#ff3d6e">ultra → med</text>
+      <text x="16" y="180" fill="#9093ad">scale</text>
+      <text x="186" y="180" text-anchor="end" fill="#5df2a0">100% · kept</text>
+      <text x="16" y="204" fill="#9093ad">v-sync</text>
+      <text x="186" y="204" text-anchor="end" fill="#ff3d6e">on → off</text>
+    </g>
+    <rect x="16" y="222" width="168" height="18" rx="5" fill="rgba(255,61,110,.12)" stroke="rgba(255,61,110,.25)"/>
+    <text x="100" y="235" text-anchor="middle" font-family="Rajdhani,Inter,sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#ff3d6e">APPLY · CONFIRMED</text>
+  </g>
+
+  <!-- stage 3: apply -->
+  <g transform="translate(590,210)">
+    <rect width="200" height="250" rx="16" fill="#10101d" stroke="rgba(255,255,255,.09)"/>
+    <rect x="16" y="16" width="40" height="40" rx="10" fill="rgba(255,61,110,.14)" stroke="rgba(255,61,110,.24)"/>
+    <path d="M26 28l14 10-14 10z" fill="#ff3d6e"/>
+    <text x="66" y="34" font-family="Rajdhani,Inter,sans-serif" font-weight="700" font-size="18" fill="#f3f4ff">03 · APPLY</text>
+    <text x="66" y="52" font-family="Inter,sans-serif" font-size="13" fill="#9093ad">write to disk</text>
+
+    <text x="16" y="96" font-family="Inter,sans-serif" font-size="14" fill="#c9cbdd">Settings are written from the reviewed preset only.</text>
+
+    <g transform="translate(16,130)">
+      <rect width="168" height="30" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)"/>
+      <circle cx="16" cy="15" r="4" fill="#5df2a0"/>
+      <text x="30" y="19" font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#c9cbdd">Balanced 144 preset</text>
+    </g>
+    <g transform="translate(16,170)">
+      <rect width="168" height="30" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)"/>
+      <circle cx="16" cy="15" r="4" fill="#35e0ff"/>
+      <text x="30" y="19" font-family="ui-monospace,Consolas,monospace" font-size="11" fill="#c9cbdd">Low-end Tier 2</text>
+    </g>
+    <g transform="translate(16,210)">
+      <rect width="168" height="18" rx="5" fill="rgba(93,242,160,.1)" stroke="rgba(93,242,160,.25)"/>
+      <text x="100" y="235" text-anchor="middle" font-family="Rajdhani,Inter,sans-serif" font-weight="600" font-size="11" letter-spacing="2" fill="#5df2a0">RESTORE AVAILABLE</text>
+    </g>
+  </g>
+
+  <!-- stage 4: measure -->
+  <g transform="translate(850,210)">
+    <rect width="200" height="250" rx="16" fill="#10101d" stroke="rgba(53,224,255,.24)"/>
+    <rect x="16" y="16" width="40" height="40" rx="10" fill="rgba(53,224,255,.12)" stroke="rgba(53,224,255,.24)"/>
+    <path d="M24 44V30m6 14V24m6 16V28m6 10V18" fill="none" stroke="#35e0ff" stroke-width="2" stroke-linecap="round"/>
+    <text x="66" y="34" font-family="Rajdhani,Inter,sans-serif" font-weight="700" font-size="18" fill="#f3f4ff">04 · MEASURE</text>
+    <text x="66" y="52" font-family="Inter,sans-serif" font-size="13" fill="#9093ad">frametime log</text>
+
+    <text x="16" y="96" font-family="Inter,sans-serif" font-size="14" fill="#c9cbdd">Read the session log and compare presets fairly.</text>
+
+    <!-- mini chart -->
+    <g transform="translate(16,118)">
+      <rect width="168" height="92" rx="8" fill="rgba(0,0,0,.3)" stroke="rgba(255,255,255,.06)"/>
+      <path d="M8 74 L24 70 L40 76 L56 56 L72 62 L88 48 L104 52 L120 38 L136 44 L152 30 L160 28" fill="none" stroke="#ff3d6e" stroke-width="2"/>
+      <path d="M8 84 L24 82 L40 84 L56 78 L72 80 L88 74 L104 76 L120 70 L136 72 L152 66 L160 64" fill="none" stroke="#35e0ff" stroke-width="1.4" stroke-dasharray="4 4" opacity=".8"/>
+    </g>
+    <text x="16" y="232" font-family="Inter,sans-serif" font-size="12" fill="#9093ad">avg 164 · 1% low 118 · spikes 2</text>
+  </g>
+
+  <text x="600" y="86" text-anchor="middle" font-family="Rajdhani,Inter,sans-serif" font-weight="700" font-size="26" letter-spacing="2" fill="#f3f4ff">THE OPTIMIZER PIPELINE</text>
+  <text x="600" y="116" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" fill="#9093ad">Read → backup → review the diff → apply → measure the frametime → keep or restore</text>
+
+  <text x="600" y="640" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#676b85">Nothing changes without a copy · local configuration files only · unofficial fan project</text>
+</svg>
